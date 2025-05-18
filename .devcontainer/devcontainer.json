@@ -1,0 +1,11 @@
+{
+  "name": "arcium-setup",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2.12.2": {}
+  },
+  "remoteUser": "vscode"
+}
