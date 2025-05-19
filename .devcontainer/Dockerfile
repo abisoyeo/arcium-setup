@@ -45,15 +45,15 @@ USER vscode
 # 4) Install Solana CLI (this also installs Anchor via Solana's tooling)
 RUN curl --proto '=https' --tlsv1.2 -sSfL https://solana-install.solana.workers.dev | bash
 
-
+# 5) Install Arcup, Arcium's CLI
 RUN mkdir -p /home/vscode/.cargo/bin && \
     curl -L "https://bin.arcium.com/download/arcup_x86_64_linux_0.1.47" \
       -o /home/vscode/.cargo/bin/arcup && \
     chmod +x /home/vscode/.cargo/bin/arcup
 
-# 5) Expose both Solana's and Cargo's bin directories on PATH for vscode
+# 6) Expose both Solana's and Cargo's bin directories on PATH for vscode
 ENV PATH="/home/vscode/.local/share/solana/install/active_release/bin:\
 /home/vscode/.cargo/bin:${PATH}"
 
-# 6) Switch back to root
+# 7) Switch back to root
 USER root
